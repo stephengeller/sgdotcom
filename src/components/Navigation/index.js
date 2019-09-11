@@ -13,6 +13,9 @@ const Navigation = () => (
       <li>
         <Link to={ROUTES.CONTACT}>Contact</Link>
       </li>
+      <li>
+        <Link to={ROUTES.SURPRISE}>Surprise</Link>
+      </li>
     </ul>
   </div>
 );
