@@ -25,4 +25,5 @@ yarn-error.log*
 # intellij
 .idea
 *.cache
-.firebase
+.firebase/
+.firebase/*

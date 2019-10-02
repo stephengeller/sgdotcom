@@ -29,7 +29,6 @@ const App = () => (
         <div style={insideStyles}>Stephen Geller</div>
       </div>
     </Parallax>
-    <h1 />
     <Parallax bgImage={image2} speedDivider="5" blur={{ min: -1, max: 3 }}>
       <div style={{ height: 500 }}>
         <div style={insideStyles}>
@@ -38,7 +37,6 @@ const App = () => (
         </div>
       </div>
     </Parallax>
-    <h1 />
     <Parallax bgImage={image3} blur={{ min: -1, max: 3 }}>
       <div style={{ height: 500 }}>
         <div style={insideStyles}>
