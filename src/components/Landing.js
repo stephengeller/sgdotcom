@@ -24,7 +24,14 @@ export default class Landing extends Component {
         >
           <Col sm>Software Developer</Col>
           <Col sm>
-            <h1> Stephen Geller</h1>
+            <h1> </h1>
+            <img
+              alt="testing"
+              src="img/stephenCartoon.png"
+              width="100%"
+              height="100%"
+              className="d-inline-block align-top"
+            />
           </Col>
           <Col sm>Polyglot Engineer</Col>
         </Row>

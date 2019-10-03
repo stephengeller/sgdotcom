@@ -10,7 +10,7 @@ const CustomNavbar = () => {
       <Navbar.Brand>
         <img
           alt=""
-          src="img/stephenCartoon.png"
+          src="img/stephenCartoonSmall.png"
           width="50"
           height="50"
           className="d-inline-block align-top"
