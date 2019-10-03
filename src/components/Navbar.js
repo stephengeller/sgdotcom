@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 
 import * as ROUTES from "../constants/routes";
 import * as URLS from "../constants/urls";
+import { FaGithub } from "react-icons/fa";
 
 const styles = {
   color: "white",
-  padding: ".5rem 1rem"
+  padding: ".5rem 1rem",
+  fontSize: "150%"
 };
 
 const NavLink = (route, text) => {
@@ -54,14 +56,14 @@ const CustomNavbar = () => {
       <Navbar.Collapse className="justify-content-end">
         {NavLink(ROUTES.ABOUT, "About")}
         {NavLink(ROUTES.CONTACT, "Contact")}
-        <NavItem>
+        <NavItem className="github-nav">
           <a
             rel="noopener noreferrer"
             target="_blank"
             style={styles}
             href={URLS.GITHUB}
           >
-            GitHub
+            <FaGithub />
           </a>
         </NavItem>
       </Navbar.Collapse>
