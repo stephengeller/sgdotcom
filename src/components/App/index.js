@@ -31,7 +31,7 @@ const My404 = () => (
 );
 
 const Surprise = () => (
-  <Container>
+  <Container style={{ textAlign: "center" }}>
     <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
       <Button variant="success">Click me to see</Button>
     </OverlayTrigger>
