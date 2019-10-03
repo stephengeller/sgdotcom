@@ -11,8 +11,7 @@ import { FaGithub } from "react-icons/fa";
 const styles = {
   color: "white",
   padding: ".5rem 1rem",
-  fontSize: "150%",
-  verticalAlign: "super"
+  display: "-webkit-block"
 };
 
 const NavLink = (route, text) => {
@@ -64,7 +63,7 @@ const CustomNavbar = () => {
             style={styles}
             href={URLS.GITHUB}
           >
-            <FaGithub />
+            <FaGithub style={{ fontSize: "150%" }} />
           </a>
         </NavItem>
       </Navbar.Collapse>
