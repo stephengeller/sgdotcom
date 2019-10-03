@@ -10,6 +10,14 @@ const styles = {
   color: "white"
 };
 
+const NavLink = (route, text) => {
+  return (
+    <Nav.Link as={Link} to={route} style={styles}>
+      {text}
+    </Nav.Link>
+  );
+};
+
 const CustomNavbar = () => {
   return (
     <Navbar collapseOnSelect expand={"sm"} bg="dark" variant="dark">
@@ -29,15 +37,9 @@ const CustomNavbar = () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
-        <Nav.Link as={Link} to={ROUTES.ABOUT} style={styles}>
-          About
-        </Nav.Link>
-        <Nav.Link as={Link} to={ROUTES.CONTACT} style={styles}>
-          Contact
-        </Nav.Link>
-        <Nav.Link as={Link} to={ROUTES.SURPRISE} style={styles}>
-          Surprise!
-        </Nav.Link>
+        {NavLink(ROUTES.ABOUT, "About")}
+        {NavLink(ROUTES.CONTACT, "Contact")}
+        {NavLink(ROUTES.SURPRISE, "Surprise!")}
         <NavItem>
           <a className="nav-link" style={styles} href={ROUTES.GITHUB}>
             GitHub
