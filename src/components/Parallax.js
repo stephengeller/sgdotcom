@@ -22,7 +22,7 @@ const image2 =
 const image3 =
   "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297440765001_5280261645001-vs.jpg?pubId=5104226627001&videoId=5280261645001";
 
-const App = () => (
+const CustomParallax = () => (
   <div style={styles}>
     <Parallax speedDivider="5" bgImage={image1} blur={{ min: -10, max: 5 }}>
       <div style={{ height: 500 }}>
@@ -48,4 +48,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default CustomParallax;

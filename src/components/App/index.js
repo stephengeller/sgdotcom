@@ -1,13 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import HomePage from "../Home";
-import Landing from "../Landing";
-import Contact from "../Contact";
-import * as ROUTES from "../../constants/routes";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Button from "react-bootstrap/Button";
+
+import HomePage from "../Home";
+import Landing from "../Landing";
+import Contact from "../Contact";
 import CustomNavbar from "../Navbar";
+import { About } from "../About";
+
+import * as ROUTES from "../../constants/routes";
+import Container from "react-bootstrap/Container";
 
 const popover = (
   <Popover id="popover-basic">
@@ -27,16 +31,16 @@ const App = () => (
   <div>
     <Router>
       <CustomNavbar />
-
-      <div>
+      <Container>
         <Route path={ROUTES.LANDING} component={Landing} />
+        <Route path={ROUTES.ABOUT} component={About} />
         <Route path={"/"} component={Landing}>
           <Redirect to={"/index"} />
         </Route>
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.CONTACT} component={Contact} />
         <Route path={ROUTES.SURPRISE} component={Surprise} />
-      </div>
+      </Container>
     </Router>
   </div>
 );
