@@ -33,10 +33,11 @@ html, body, #app, #app>div, #root {
   background-size: cover;
 }
 
-.carousel-caption {
-  -webkit-text-stroke: 0.2px black;
-}
-
 .carousel-inner {
   text-align: center;
+}
+
+.contact-icon {
+  font-size: 400%;
+  padding: 10px;
 }
