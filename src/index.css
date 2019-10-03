@@ -33,7 +33,9 @@ html, body, #app, #app>div, #root {
   background-size: cover;
 }
 
-.carousel-caption {}
+.carousel-caption {
+  -webkit-text-stroke: 0.2px black;
+}
 
 .carousel-inner {
   text-align: center;

@@ -48,7 +48,13 @@ const CustomNavbar = () => {
         {NavLink(ROUTES.CONTACT, "Contact")}
         {NavLink(ROUTES.SURPRISE, "Surprise!")}
         <NavItem>
-          <a className="nav-link" style={styles} href={ROUTES.GITHUB}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            className="nav-link"
+            style={styles}
+            href={ROUTES.GITHUB}
+          >
             GitHub
           </a>
         </NavItem>

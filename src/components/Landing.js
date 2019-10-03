@@ -8,7 +8,7 @@ function carouselItem(image, header, sub, alt = "carousel-image") {
       <Image src={image} alt={alt} className="carousel-image" />
       <Carousel.Caption className="carousel-caption">
         <h3>{header}</h3>
-        <p>{sub}</p>
+        <h5>{sub}</h5>
       </Carousel.Caption>
     </Carousel.Item>
   );
@@ -17,7 +17,7 @@ function carouselItem(image, header, sub, alt = "carousel-image") {
 const Landing = () => {
   return (
     <div>
-      <Carousel className="carousel">
+      <Carousel interval="10000" className="carousel">
         {carouselItem(
           "img/StephenJapan2.jpg",
           "Hi, I'm Stephen.",
@@ -26,8 +26,9 @@ const Landing = () => {
         {carouselItem(
           "img/AfterlightImage.jpg",
           "I like photography",
-          "I take pictures with an iPhone XS"
+          "For now, I take pictures with an iPhone."
         )}
+        {carouselItem("img/KyotoStreets.jpg", "Get in touch.", "Or don't.")}
       </Carousel>
     </div>
   );

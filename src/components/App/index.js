@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Button from "react-bootstrap/Button";
@@ -21,9 +22,11 @@ const popover = (
 );
 
 const Surprise = () => (
-  <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-    <Button variant="success">Click me to see</Button>
-  </OverlayTrigger>
+  <Container>
+    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+      <Button variant="success">Click me to see</Button>
+    </OverlayTrigger>
+  </Container>
 );
 
 const App = () => (
