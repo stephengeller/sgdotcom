@@ -5,9 +5,11 @@ import NavItem from "react-bootstrap/NavItem";
 import { Link } from "react-router-dom";
 
 import * as ROUTES from "../constants/routes";
+import * as URLS from "../constants/urls";
 
 const styles = {
-  color: "white"
+  color: "white",
+  padding: ".5rem 1rem"
 };
 
 const NavLink = (route, text) => {
@@ -18,6 +20,12 @@ const NavLink = (route, text) => {
   );
 };
 
+const navBarStyle = {
+  paddingTop: "0px",
+  paddingBottom: "0",
+  marginBottom: "10px"
+};
+
 const CustomNavbar = () => {
   return (
     <Navbar
@@ -26,7 +34,7 @@ const CustomNavbar = () => {
       expand={"sm"}
       bg="dark"
       variant="dark"
-      style={{ paddingTop: "0px", paddingBottom: "0" }}
+      style={navBarStyle}
     >
       <Navbar.Brand>
         <img
@@ -46,14 +54,12 @@ const CustomNavbar = () => {
       <Navbar.Collapse className="justify-content-end">
         {NavLink(ROUTES.ABOUT, "About")}
         {NavLink(ROUTES.CONTACT, "Contact")}
-        {NavLink(ROUTES.SURPRISE, "Surprise!")}
         <NavItem>
           <a
             rel="noopener noreferrer"
             target="_blank"
-            className="nav-link"
             style={styles}
-            href={ROUTES.GITHUB}
+            href={URLS.GITHUB}
           >
             GitHub
           </a>
