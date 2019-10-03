@@ -16,15 +16,13 @@ export default class Landing extends Component {
         <Row
           style={{
             height: "100%",
-            width: "100%",
             textAlign: "center",
             display: "flex",
             alignItems: "center"
           }}
         >
           <Col>Software Developer</Col>
-          <Col xs={6}>
-            {" "}
+          <Col>
             <h1> Stephen Geller</h1>
           </Col>
           <Col>Polyglot Engineer</Col>
