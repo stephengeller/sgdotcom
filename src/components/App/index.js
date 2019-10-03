@@ -11,7 +11,6 @@ import CustomNavbar from "../Navbar";
 import { About } from "../About";
 
 import * as ROUTES from "../../constants/routes";
-import Container from "react-bootstrap/Container";
 
 const popover = (
   <Popover id="popover-basic">
