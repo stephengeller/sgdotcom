@@ -20,7 +20,14 @@ const NavLink = (route, text) => {
 
 const CustomNavbar = () => {
   return (
-    <Navbar collapseOnSelect expand={"sm"} bg="dark" variant="dark">
+    <Navbar
+      sticky={"top"}
+      collapseOnSelect
+      expand={"sm"}
+      bg="dark"
+      variant="dark"
+      style={{ paddingTop: "0px", paddingBottom: "0" }}
+    >
       <Navbar.Brand>
         <img
           alt=""
