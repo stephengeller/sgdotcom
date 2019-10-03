@@ -27,18 +27,16 @@ const Surprise = () => (
 );
 
 const App = () => (
-  <div>
-    <Router>
-      <CustomNavbar />
-      <Route path={ROUTES.LANDING} component={Landing} />
-      <Route path={ROUTES.ABOUT} component={About} />
-      <Route path={"/"} component={Landing}>
-        <Redirect to={"/index"} />
-      </Route>
-      <Route path={ROUTES.HOME} component={HomePage} />
-      <Route path={ROUTES.CONTACT} component={Contact} />
-      <Route path={ROUTES.SURPRISE} component={Surprise} />
-    </Router>
-  </div>
+  <Router>
+    <CustomNavbar />
+    <Route path={ROUTES.LANDING} component={Landing} />
+    <Route path={ROUTES.ABOUT} component={About} />
+    <Route exact path={"/"}>
+      <Redirect to={"/index"} />
+    </Route>
+    <Route path={ROUTES.HOME} component={HomePage} />
+    <Route path={ROUTES.CONTACT} component={Contact} />
+    <Route path={ROUTES.SURPRISE} component={Surprise} />
+  </Router>
 );
 export default App;
