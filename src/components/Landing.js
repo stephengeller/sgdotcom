@@ -10,7 +10,8 @@ export default class Landing extends Component {
           height: "90%",
           width: "100%",
           position: "absolute",
-          left: "0"
+          left: "0",
+          padding: "80px"
         }}
       >
         <Row
@@ -21,11 +22,11 @@ export default class Landing extends Component {
             alignItems: "center"
           }}
         >
-          <Col>Software Developer</Col>
-          <Col>
+          <Col sm>Software Developer</Col>
+          <Col sm>
             <h1> Stephen Geller</h1>
           </Col>
-          <Col>Polyglot Engineer</Col>
+          <Col sm>Polyglot Engineer</Col>
         </Row>
       </div>
     );
