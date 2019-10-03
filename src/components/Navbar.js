@@ -11,7 +11,8 @@ import { FaGithub } from "react-icons/fa";
 const styles = {
   color: "white",
   padding: ".5rem 1rem",
-  fontSize: "150%"
+  fontSize: "150%",
+  verticalAlign: "super"
 };
 
 const NavLink = (route, text) => {
