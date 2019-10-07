@@ -47,6 +47,10 @@ body,
   padding: 10px;
 }
 
+.nav-link {
+  color: white;
+}
+
 .nav-link:hover {
-  font-weight: bold;
+  color: #d3d3d3 !important;
 }
