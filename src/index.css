@@ -18,7 +18,7 @@ body,
 #app,
 #app > div,
 #root {
-  background-color: black;
+  background-color: rgba(17,17,17,0.99);
   color: white
 }
 
@@ -28,7 +28,6 @@ body,
   position: fixed;
   top: 0;
   left: 0;
-  background-color: black;
   align-items: center;
 }
 
@@ -46,4 +45,8 @@ body,
 .contact-icon {
   font-size: 400%;
   padding: 10px;
+}
+
+.nav-link:hover {
+  font-weight: bold;
 }

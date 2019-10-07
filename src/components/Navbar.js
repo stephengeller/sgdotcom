@@ -25,8 +25,7 @@ const NavLink = (route, text) => {
 const navBarStyle = {
   paddingTop: "0px",
   paddingBottom: "0",
-  marginBottom: "10px",
-  backgroundColor: "transparent"
+  marginBottom: "10px"
 };
 
 const CustomNavbar = () => {
