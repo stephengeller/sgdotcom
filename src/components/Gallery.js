@@ -3,7 +3,9 @@ import Container from "react-bootstrap/Container";
 
 const style = {
   paddingTop: "20vh",
-  textAlign: "center"
+  textAlign: "center",
+  backgroundColor: "transparent",
+  height: "100vh"
 };
 
 export const Gallery = () => {

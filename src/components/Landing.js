@@ -28,7 +28,17 @@ const Landing = () => {
           "I like photography",
           "For now, I take pictures with an iPhone."
         )}
-        {carouselItem("img/KyotoStreets.jpg", "Get in touch.", "Or don't.")}
+        {carouselItem(
+          "img/KyotoStreets.jpg",
+          "Get in touch.",
+          <a
+            href={"/contact"}
+            className={"nav-link"}
+            style={{ textDecoration: "" }}
+          >
+            Find my contact links here
+          </a>
+        )}
       </Carousel>
     </div>
   );

@@ -23,9 +23,7 @@ const NavLink = (route, text) => {
 };
 
 const navBarStyle = {
-  paddingTop: "0px",
-  paddingBottom: "0",
-  marginBottom: "10px"
+  padding: ".5rem 1rem"
 };
 
 const CustomNavbar = () => {
@@ -38,12 +36,12 @@ const CustomNavbar = () => {
       style={navBarStyle}
     >
       <Navbar.Brand>
-        <Link to={ROUTES.LANDING} style={{ marginLeft: "10px" }}>
+        <Link to={ROUTES.LANDING} style={{ marginLeft: "0px" }}>
           <img
             alt=""
             src="img/stephenCartoonSmall.png"
-            width="50"
-            height="50"
+            width="60"
+            height="60"
             className="d-inline-block align-top"
           />
         </Link>
