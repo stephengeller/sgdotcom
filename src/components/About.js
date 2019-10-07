@@ -2,9 +2,14 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import * as URLS from "../constants/urls";
 
+const style = {
+  paddingTop: "10vh",
+  height: "100vh"
+};
+
 export const About = () => {
   return (
-    <div>
+    <div style={style}>
       <Container>
         <h1>About</h1>
         <div>

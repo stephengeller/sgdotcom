@@ -1,17 +1,23 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import { FaTwitter, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import * as URLS from "../constants/urls";
 
+const parent = {
+  textAlign: "center",
+  height: "100vh",
+  display: "table",
+  width: "100%"
+};
+
+const child = {
+  verticalAlign: "middle",
+  display: "table-cell"
+};
+
 const Contact = () => {
   return (
-    <div>
-      <Container
-        style={{
-          paddingTop: "20px",
-          textAlign: "center"
-        }}
-      >
+    <div style={parent}>
+      <div style={child}>
         <a href={URLS.GITHUB}>
           <FaGithub className="contact-icon" />
         </a>
@@ -24,7 +30,7 @@ const Contact = () => {
         <a href={URLS.LINKEDIN}>
           <FaLinkedin className="contact-icon" />
         </a>
-      </Container>
+      </div>
     </div>
   );
 };

@@ -25,36 +25,34 @@ const NavLink = (route, text) => {
 const navBarStyle = {
   paddingTop: "0px",
   paddingBottom: "0",
-  marginBottom: "10px"
+  marginBottom: "10px",
+  backgroundColor: "transparent"
 };
 
 const CustomNavbar = () => {
   return (
     <Navbar
-      sticky={"top"}
+      fixed={"top"}
       collapseOnSelect
       expand={"sm"}
-      bg="dark"
       variant="dark"
       style={navBarStyle}
     >
       <Navbar.Brand>
-        <img
-          alt=""
-          src="img/stephenCartoonSmall.png"
-          width="50"
-          height="50"
-          className="d-inline-block align-top"
-        />
-        <Navbar.Text>
-          <Link to={ROUTES.LANDING} style={{ marginLeft: "10px" }}>
-            Stephen Geller
-          </Link>
-        </Navbar.Text>
+        <Link to={ROUTES.LANDING} style={{ marginLeft: "10px" }}>
+          <img
+            alt=""
+            src="img/stephenCartoonSmall.png"
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+          />
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         {NavLink(ROUTES.ABOUT, "About")}
+        {NavLink(ROUTES.GALLERY, "Gallery")}
         {NavLink(ROUTES.CONTACT, "Contact")}
         <NavItem className="github-nav">
           <a

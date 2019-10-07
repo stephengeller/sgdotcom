@@ -12,6 +12,7 @@ import CustomNavbar from "../Navbar";
 import { About } from "../About";
 
 import * as ROUTES from "../../constants/routes";
+import { Gallery } from "../Gallery";
 
 const popover = (
   <Popover id="popover-basic">
@@ -44,6 +45,7 @@ const App = () => (
     <Switch>
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route exact path={ROUTES.ABOUT} component={About} />
+      <Route exact path={ROUTES.GALLERY} component={Gallery} />
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.CONTACT} component={Contact} />
       <Route exact path={ROUTES.SURPRISE} component={Surprise} />

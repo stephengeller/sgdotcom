@@ -1,3 +1,4 @@
+export let GALLERY = "/gallery";
 export const ABOUT = "/about";
 export const LANDING = "/";
 export const HOME = "/home";
