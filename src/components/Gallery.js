@@ -1,29 +1,11 @@
 import React from "react";
-import ImageGallery from "react-image-gallery";
+import Container from "react-bootstrap/Container";
 
-import "react-image-gallery/styles/css/image-gallery.css";
-
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/"
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/"
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/"
-  }
-];
-
-const style = {};
+const style = {
+  paddingTop: "20vh",
+  textAlign: "center"
+};
 
 export const Gallery = () => {
-  return (
-    <div style={style}>
-      <ImageGallery items={images} />
-    </div>
-  );
+  return <Container style={style}>Coming soon!</Container>;
 };
