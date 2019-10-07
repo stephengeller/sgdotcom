@@ -1,5 +1,11 @@
 import React from "react";
-import { FaTwitter, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaEnvelope
+} from "react-icons/fa";
 import * as URLS from "../constants/urls";
 
 const parent = {
@@ -14,22 +20,23 @@ const child = {
   display: "table-cell"
 };
 
+function contactIcon(link, Icon) {
+  return (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <Icon className="contact-icon" />
+    </a>
+  );
+}
+
 const Contact = () => {
   return (
     <div style={parent}>
       <div style={child}>
-        <a href={URLS.GITHUB}>
-          <FaGithub className="contact-icon" />
-        </a>
-        <a href={URLS.TWITTER}>
-          <FaTwitter className="contact-icon" />
-        </a>
-        <a href={URLS.INSTAGRAM}>
-          <FaInstagram className="contact-icon" />
-        </a>
-        <a href={URLS.LINKEDIN}>
-          <FaLinkedin className="contact-icon" />
-        </a>
+        {contactIcon(URLS.GITHUB, FaGithub)}
+        {contactIcon(URLS.TWITTER, FaTwitter)}
+        {contactIcon(URLS.INSTAGRAM, FaInstagram)}
+        {contactIcon(URLS.LINKEDIN, FaLinkedin)}
+        {contactIcon(URLS.EMAIL, FaEnvelope)}
       </div>
     </div>
   );
