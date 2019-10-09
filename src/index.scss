@@ -1,5 +1,5 @@
 $background-color: #202020;
-$navbar-transparent: rgba(0,0,0,0.09);
+$navbar-transparent: rgba(0, 0, 0, 0.09);
 
 body {
   margin: 0;
@@ -26,32 +26,6 @@ body,
 #root {
   background-color: $background-color;
   color: white;
-}
-
-.carousel {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  align-items: center;
-}
-
-.carousel-image {
-  //noinspection CssInvalidPropertyValue
-  height: -webkit-fill-available;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.carousel-inner {
-  text-align: center;
-}
-
-.contact-icon {
-  font-size: 10vw;
-  margin: 1.8vw;
 }
 
 .nav-link {
@@ -86,4 +60,5 @@ body,
 @media (max-width: 845px) {
   .contact-icon {
     font-size: 8vw;
-  }}
+  }
+}

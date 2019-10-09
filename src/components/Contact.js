@@ -21,7 +21,10 @@ const child = {
   display: "table-cell"
 };
 
-const iconStyle = {};
+const iconStyle = {
+  fontSize: "10vw",
+  margin: "1.8vw"
+};
 
 function contactIcon(link, Icon) {
   return (
