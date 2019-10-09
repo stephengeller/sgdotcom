@@ -1,4 +1,4 @@
-$background-color: rgba(17, 17, 17, 0.4);
+$background-color: #202020;
 $navbar-transparent: rgba(0,0,0,0.09);
 
 body {
@@ -13,6 +13,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  height: 100vh;
 }
 
 html,
@@ -34,6 +38,7 @@ body,
 }
 
 .carousel-image {
+  //noinspection CssInvalidPropertyValue
   height: -webkit-fill-available;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,8 +50,8 @@ body,
 }
 
 .contact-icon {
-  font-size: 400%;
-  padding: 10px;
+  font-size: 10vw;
+  margin: 1.8vw;
 }
 
 .nav-link {
@@ -63,12 +68,22 @@ body,
 }
 
 @media (max-width: 576px) {
-  .navbar {
-    background-color: $background-color;
-  }
-
   .github-nav {
     margin-top: 5px;
     margin-bottom: 15px;
   }
+
+  .mobile-container {
+    height: 60vh !important;
+  }
+
+  .contact-icon {
+    font-size: 5vh !important;
+    margin: 2vw;
+  }
 }
+
+@media (max-width: 845px) {
+  .contact-icon {
+    font-size: 8vw;
+  }}

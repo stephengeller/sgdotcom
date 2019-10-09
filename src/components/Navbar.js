@@ -29,7 +29,7 @@ const navBarStyle = {
 const CustomNavbar = () => {
   return (
     <Navbar
-      fixed={"top"}
+      sticky={"top"}
       collapseOnSelect
       expand={"sm"}
       variant="dark"

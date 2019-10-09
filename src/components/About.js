@@ -1,33 +1,26 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import * as URLS from "../constants/urls";
+import ReactMarkdown from "react-markdown";
 
-const style = {
-  paddingTop: "10vh",
-  height: "100vh"
-};
+const style = {};
+
+const markdown = `
+# About
+
+My name is Stephen Geller, and I am a London-based polyglot software engineer specialising in building tools and supporting infrastructure.
+
+I am proficient in multiple languages and frameworks, and specialised in Javascript, Scala and Python.
+
+As an Agile and XP advocate, I produce reliable, legible and tested code, ensuring to iterate quickly and deliver often.
+
+You can find my full CV on my [Github](${URLS.GITHUB}/CV) page.`;
 
 export const About = () => {
   return (
-    <div style={style}>
+    <div className="mobile-container" style={style}>
       <Container>
-        <h1>About</h1>
-        <div>
-          I am a London-based software developer, proficient in web-development
-          languages and frameworks such as Ruby on Rails, Javascript and Node.
-          <br />
-          <br />
-          Through my time at <a href="https://makers.tech"> Makers Academy</a>,
-          I have learnt to write my code using Test-Driven Development
-          techniques ensuring that I produce clean, efficient code for any
-          project.
-          <br />
-          <br />
-          You can see my full CV on my <a href={`${URLS.GITHUB}/CV`}>
-            GitHub{" "}
-          </a>{" "}
-          page.
-        </div>
+        <ReactMarkdown>{markdown}</ReactMarkdown>
       </Container>
     </div>
   );
