@@ -23,7 +23,7 @@ const NavLink = (route, text) => {
 };
 
 const navBarStyle = {
-  padding: ".5rem 1rem"
+  padding: "0rem 0.5rem"
 };
 
 const CustomNavbar = () => {
