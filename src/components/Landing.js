@@ -22,7 +22,7 @@ function carouselItem(image, header, sub, alt = "carousel-image") {
   return (
     <Carousel.Item>
       <Image src={image} alt={alt} style={carouselImageStyle} />
-      <Carousel.Caption className="carousel-caption">
+      <Carousel.Caption>
         <h3>{header}</h3>
         <h5>{sub}</h5>
       </Carousel.Caption>

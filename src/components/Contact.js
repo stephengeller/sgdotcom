@@ -7,7 +7,6 @@ import {
   FaEnvelope
 } from "react-icons/fa";
 import * as URLS from "../constants/urls";
-import Container from "react-bootstrap/Container";
 
 const parent = {
   textAlign: "center",
@@ -22,8 +21,8 @@ const child = {
 };
 
 const iconStyle = {
-  fontSize: "10vw",
-  margin: "1.8vw"
+  fontSize: "8vw",
+  margin: "0 5vw"
 };
 
 function contactIcon(link, Icon) {
@@ -36,7 +35,7 @@ function contactIcon(link, Icon) {
 
 const Contact = () => {
   return (
-    <Container style={parent} className="mobile-container">
+    <div style={parent} className="mobile-container">
       <div style={child} className="contact-icons">
         {contactIcon(URLS.GITHUB, FaGithub)}
         {contactIcon(URLS.TWITTER, FaTwitter)}
@@ -44,7 +43,7 @@ const Contact = () => {
         {contactIcon(URLS.LINKEDIN, FaLinkedin)}
         {contactIcon(URLS.EMAIL, FaEnvelope)}
       </div>
-    </Container>
+    </div>
   );
 };
 
