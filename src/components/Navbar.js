@@ -3,15 +3,21 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import NavItem from "react-bootstrap/NavItem";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 
 import * as ROUTES from "../constants/routes";
 import * as URLS from "../constants/urls";
-import { FaGithub } from "react-icons/fa";
+
+const imgSize = 50;
 
 const styles = {
   color: "white",
   padding: ".5rem 1rem",
   display: "-webkit-block"
+};
+
+const navBarStyle = {
+  marginBottom: "1vh"
 };
 
 const NavLink = (route, text) => {
@@ -20,10 +26,6 @@ const NavLink = (route, text) => {
       {text}
     </Nav.Link>
   );
-};
-
-const navBarStyle = {
-  padding: "0rem 0.5rem"
 };
 
 const CustomNavbar = () => {
@@ -40,8 +42,8 @@ const CustomNavbar = () => {
           <img
             alt=""
             src="img/stephenCartoonSmall.png"
-            width="60"
-            height="60"
+            width={imgSize}
+            height={imgSize}
             className="d-inline-block align-top"
           />
         </Link>
