@@ -10,9 +10,9 @@ import * as URLS from "../constants/urls";
 
 const parent = {
   textAlign: "center",
-  height: "70%",
   display: "table",
-  width: "100%"
+  width: "100%",
+  height: "80vh"
 };
 
 const child = {
