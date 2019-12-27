@@ -46,7 +46,7 @@ const Landing = () => {
         )}
         {carouselItem(
           "img/KyotoStreets.jpg",
-          "Get in touch.",
+          "Get in touch with me.",
           <a
             href={"/contact"}
             className={"nav-link"}
