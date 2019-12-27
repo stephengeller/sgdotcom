@@ -2,6 +2,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To Deploy
 
+First, get a .env file with the appropriate firebase credentials in your root directory:
+```dotenv
+REACT_APP_API_KEY="<SECRET>"
+REACT_APP_AUTH_DOMAIN="<SECRET>"
+REACT_APP_DATABASE_URL="<SECRET>"
+REACT_APP_PROJECT_ID="<SECRET>"
+REACT_APP_STORAGE_BUCKET="<SECRET>"
+REACT_APP_MESSAGING_SENDER_ID="<SECRET>"
+REACT_APP_APP_ID="<SECRET>"
+```
+
 Run `./scripts/deploy.sh`
 
 ## Available Scripts
