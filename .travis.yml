@@ -9,6 +9,7 @@ before_deploy:
   - npm install -g firebase-tools && yarn build
 
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: "FS6Ah8T1OYlpo1N86ilcU+7qWX7BbFsLKlrXzD6KPjMmBVux4+Mc2B/W+8vx1eA+GDae7QxReAZyuF2CzRRLoZHw2yjtuaaCL52NrvxTZhoU+7F1HISFWH+EP/yUiKymN/UfFzN9AijvU89TtIqiuuYtCc6y1UeDbCftX/2g2JQNvRMhsW6GBaE9GWtKMcHU9UqvLWOnVdzbJHX2jSh1/gtJcnSOQ4FUMJaXIA60788WQT2sGfDfIEUD9pxDe7mVEu8MTrPTLj2m2d5AhZOyrO3JDIK8uaskwz624gI9+J8rUusnD5NeSFha3gzI7rvsbgeq5WsF4BNJotPSjN90C3Zw4WbYH8D0lPGCfL+jep6koo14DtXCfUSrNEdqYzYS4NCyQJ6yJRov4jRvokZBQhRYdRH/8l/pdVTsVlRRTTmZSkB0JG+rxVfywdv7gXgJE43kNqxFtFia0K3lsGY3xdU6Zoe7u9jXbc+JtiaiQXy+Nm4g0k+BlN0qCcEVj8FzKAh4ORBhA3ZncrVxyfBpXxkt635ELka0y/Hfcj+Lk0HiWsRNQsEMUSFRv2oqPy/r5ZOe12/o7Q+q9PjpD3qy8rjXyfkGOfC0DEkANchYVmtwURH7UX/maqAwbEeMGXFYi0lTt24WXzwpW1OK69UXbfQhHvi6fhnulXuTKPVnurM="
