@@ -2,9 +2,16 @@
 
 [![Build Status](https://travis-ci.com/stephengeller/sgdotcom.svg?branch=master)](https://travis-ci.com/stephengeller/sgdotcom)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for [my personal website.](https://stephengeller.co.uk)
+
 
 ## To Deploy
+
+### Automatically using Travis CI
+
+This repository is set up to deploy the master branch using Travis CI. You can [see the builds here](https://travis-ci.com/stephengeller/sgdotcom/).
+
+### Manually using Firebase CLI
 
 First, get a .env file with the appropriate firebase credentials in your root directory:
 ```dotenv
@@ -17,7 +24,7 @@ REACT_APP_MESSAGING_SENDER_ID="<SECRET>"
 REACT_APP_APP_ID="<SECRET>"
 ```
 
-Run `./scripts/deploy.sh`
+Then, run `./scripts/deploy.sh` to deploy the code to Firebase.
 
 ## Available Scripts
 
