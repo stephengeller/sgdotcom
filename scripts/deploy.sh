@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -xe
 
-echo would "yarn build && firebase deploy"
+yarn build
+firebase deploy
