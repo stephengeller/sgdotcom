@@ -2,4 +2,4 @@
 
 set -e
 
-yarn build && firebase deploy
+echo would "yarn build && firebase deploy"
