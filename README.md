@@ -1,3 +1,7 @@
+# Stephen Geller Dot Com
+
+[![Build Status](https://travis-ci.com/stephengeller/sgdotcom.svg?branch=master)](https://travis-ci.com/stephengeller/sgdotcom)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## To Deploy
