@@ -2,4 +2,4 @@
 
 set -e
 
-yarn build && firebase deploy
+eslint src --max-warnings 0
