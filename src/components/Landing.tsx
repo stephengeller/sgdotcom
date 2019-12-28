@@ -22,7 +22,7 @@ function carouselItem(
   image: string,
   header: string,
   sub: any,
-  alt: string = "carousel-image"
+  alt = "carousel-image"
 ) {
   return (
     <Carousel.Item>
