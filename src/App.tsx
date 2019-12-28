@@ -6,13 +6,13 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Button from "react-bootstrap/Button";
 
 import CustomNavbar from "./components/Navbar";
-// import HomePage from "../Home";
-// import Landing from "../Landing";
-// import Contact from "../Contact";
-// import { About } from "../About";
+import HomePage from "./components/Home";
+import { Landing } from "./components/Landing";
+import { Contact } from "./components/Contact";
+import { About } from "./components/About";
 
 import ROUTES from "./constants/routes.json";
-// import { Gallery } from "../Gallery";
+import { Gallery } from "./components/Gallery";
 
 const popover = (
   <Popover id="popover-basic">
@@ -43,11 +43,11 @@ const App = () => (
   <Router>
     <CustomNavbar />
     <Switch>
-      {/*<Route exact path={ROUTES.LANDING} component={Landing} />*/}
-      {/*<Route exact path={ROUTES.ABOUT} component={About} />*/}
-      {/*<Route exact path={ROUTES.GALLERY} component={Gallery} />*/}
-      {/*<Route exact path={ROUTES.HOME} component={HomePage} />*/}
-      {/*<Route exact path={ROUTES.CONTACT} component={Contact} />*/}
+      <Route exact path={ROUTES.LANDING} component={Landing} />
+      <Route exact path={ROUTES.ABOUT} component={About} />
+      <Route exact path={ROUTES.GALLERY} component={Gallery} />
+      <Route exact path={ROUTES.HOME} component={HomePage} />
+      <Route exact path={ROUTES.CONTACT} component={Contact} />
       <Route exact path={ROUTES.SURPRISE} component={Surprise} />
       <Route component={My404} />
     </Switch>

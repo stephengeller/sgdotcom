@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 const style = {
   textAlign: "center",
   backgroundColor: "transparent"
-};
+} as React.CSSProperties;
 
 export const Gallery = () => {
   return (

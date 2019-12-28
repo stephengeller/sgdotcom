@@ -6,14 +6,15 @@ import {
   FaLinkedin,
   FaEnvelope
 } from "react-icons/fa";
-import * as URLS from "../constants/urls";
+
+import URLS from "../constants/urls.json";
 
 const parent = {
   textAlign: "center",
   display: "table",
   width: "100%",
   height: "80vh"
-};
+} as React.CSSProperties;
 
 const child = {
   verticalAlign: "middle",
@@ -25,7 +26,7 @@ const iconStyle = {
   margin: "0 5vw"
 };
 
-function contactIcon(link, Icon) {
+function contactIcon(link: string, Icon: any) {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <Icon className="contact-icon" style={iconStyle} />
@@ -33,7 +34,7 @@ function contactIcon(link, Icon) {
   );
 }
 
-const Contact = () => {
+export const Contact = () => {
   return (
     <div style={parent} className="mobile-container">
       <div style={child} className="contact-icons">
@@ -46,5 +47,3 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;

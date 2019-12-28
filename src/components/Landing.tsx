@@ -7,7 +7,7 @@ const carouselImageStyle = {
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover"
-};
+} as React.CSSProperties;
 
 const carouselStyle = {
   width: "100%",
@@ -16,9 +16,14 @@ const carouselStyle = {
   top: "0",
   left: "0",
   alignItems: "center"
-};
+} as React.CSSProperties;
 
-function carouselItem(image, header, sub, alt = "carousel-image") {
+function carouselItem(
+  image: string,
+  header: string,
+  sub: any,
+  alt: string = "carousel-image"
+) {
   return (
     <Carousel.Item>
       <Image src={image} alt={alt} style={carouselImageStyle} />
@@ -30,10 +35,10 @@ function carouselItem(image, header, sub, alt = "carousel-image") {
   );
 }
 
-const Landing = () => {
+export const Landing = () => {
   return (
     <div>
-      <Carousel interval="10000" style={carouselStyle}>
+      <Carousel interval={10000} style={carouselStyle}>
         {carouselItem(
           "img/StephenJapan2.jpg",
           "Hi, I'm Stephen.",
@@ -52,12 +57,10 @@ const Landing = () => {
             className={"nav-link"}
             style={{ textDecoration: "" }}
           >
-            Find my contact links here
+            Click here for my deets.
           </a>
         )}
       </Carousel>
     </div>
   );
 };
-
-export default Landing;
