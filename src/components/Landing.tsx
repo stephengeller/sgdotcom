@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
 
@@ -18,48 +18,53 @@ const carouselStyle = {
   alignItems: "center"
 } as React.CSSProperties;
 
-function carouselItem(
-  image: string,
-  header: string,
-  sub: any,
-  alt = "carousel-image"
-) {
+const CarouselItem = ({
+  image,
+  header,
+  subheader,
+  alt
+}: {
+  image: string;
+  header: string;
+  subheader: string | JSX.Element;
+  alt?: "carousel-image";
+}): ReactElement => {
   return (
     <Carousel.Item>
       <Image src={image} alt={alt} style={carouselImageStyle} />
       <Carousel.Caption>
         <h3>{header}</h3>
-        <h5>{sub}</h5>
+        <h5>{subheader}</h5>
       </Carousel.Caption>
     </Carousel.Item>
   );
-}
+};
 
-export const Landing = () => {
+const getInTouchSub = (
+  <a href={"/contact"} className={"nav-link"} style={{ textDecoration: "" }}>
+    Click here for my deets.
+  </a>
+);
+
+export const Landing = (): ReactElement => {
   return (
     <div>
       <Carousel interval={10000} style={carouselStyle}>
-        {carouselItem(
-          "img/StephenJapan2.jpg",
-          "Hi, I'm Stephen.",
-          "I write code for a living."
-        )}
-        {carouselItem(
-          "img/AfterlightImage.jpg",
-          "I like photography",
-          "For now, I take pictures with an iPhone."
-        )}
-        {carouselItem(
-          "img/KyotoStreets.jpg",
-          "Get in touch with me.",
-          <a
-            href={"/contact"}
-            className={"nav-link"}
-            style={{ textDecoration: "" }}
-          >
-            Click here for my deets.
-          </a>
-        )}
+        <CarouselItem
+          image="img/StephenJapan2.jpg"
+          header="Hi, I'm Stephen."
+          subheader={"I write code for a living."}
+        />
+        <CarouselItem
+          image="img/AfterlightImage.jpg"
+          header="I like photography"
+          subheader="For now, I take pictures with an iPhone."
+        />
+        <CarouselItem
+          image="img/KyotoStreets.jpg"
+          header="Get in touch with me."
+          subheader={getInTouchSub}
+        />
       </Carousel>
     </div>
   );

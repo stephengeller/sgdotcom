@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Container from "react-bootstrap/Container";
 import URLS from "../constants/urls.json";
 
@@ -30,7 +30,7 @@ const contents = (
   </div>
 );
 
-export const About = () => {
+export const About = (): ReactElement => {
   return (
     <div className="mobile-container" style={style}>
       <Container>

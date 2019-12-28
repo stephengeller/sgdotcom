@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import {
   FaTwitter,
   FaGithub,
@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 
 import URLS from "../constants/urls.json";
+import { IconType } from "react-icons";
 
 const parent = {
   textAlign: "center",
@@ -26,7 +27,7 @@ const iconStyle = {
   margin: "0 5vw"
 };
 
-function contactIcon(link: string, Icon: any) {
+function contactIcon(link: string, Icon: IconType): ReactElement {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <Icon className="contact-icon" style={iconStyle} />
@@ -34,7 +35,7 @@ function contactIcon(link: string, Icon: any) {
   );
 }
 
-export const Contact = () => {
+export const Contact = (): ReactElement => {
   return (
     <div style={parent} className="mobile-container">
       <div style={child} className="contact-icons">
