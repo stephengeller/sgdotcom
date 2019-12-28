@@ -18,17 +18,12 @@ const carouselStyle = {
   alignItems: "center"
 } as React.CSSProperties;
 
-const CarouselItem = ({
-  image,
-  header,
-  subheader,
-  alt
-}: {
-  image: string;
-  header: string;
-  subheader: string | JSX.Element;
-  alt?: "carousel-image";
-}): ReactElement => {
+const carouselItem = (
+  image: string,
+  header: string,
+  subheader: string | JSX.Element,
+  alt?: "carousel-image"
+): ReactElement => {
   return (
     <Carousel.Item>
       <Image src={image} alt={alt} style={carouselImageStyle} />
@@ -50,21 +45,21 @@ export const Landing = (): ReactElement => {
   return (
     <div>
       <Carousel interval={10000} style={carouselStyle}>
-        <CarouselItem
-          image="img/StephenJapan2.jpg"
-          header="Hi, I'm Stephen."
-          subheader={"I write code for a living."}
-        />
-        <CarouselItem
-          image="img/AfterlightImage.jpg"
-          header="I like photography"
-          subheader="For now, I take pictures with an iPhone."
-        />
-        <CarouselItem
-          image="img/KyotoStreets.jpg"
-          header="Get in touch with me."
-          subheader={getInTouchSub}
-        />
+        {carouselItem(
+          "img/StephenJapan2.jpg",
+          "Hi, I'm Stephen.",
+          "I write code for a living."
+        )}
+        {carouselItem(
+          "img/AfterlightImage.jpg",
+          "I like photography",
+          "For now, I take pictures with an iPhone."
+        )}
+        {carouselItem(
+          "img/KyotoStreets.jpg",
+          "Get in touch with me.",
+          getInTouchSub
+        )}
       </Carousel>
     </div>
   );
