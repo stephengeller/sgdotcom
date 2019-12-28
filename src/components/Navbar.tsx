@@ -1,12 +1,12 @@
 import Navbar from "react-bootstrap/Navbar";
-import React from "react";
+import React, { ReactElement } from "react";
 import Nav from "react-bootstrap/Nav";
 import NavItem from "react-bootstrap/NavItem";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 
-import * as ROUTES from "../constants/routes";
-import * as URLS from "../constants/urls";
+import ROUTES from "../constants/routes.json";
+import URLS from "../constants/urls.json";
 
 const imgSize = 50;
 
@@ -20,7 +20,7 @@ const navBarStyle = {
   marginBottom: "1vh"
 };
 
-const NavLink = (route, text) => {
+const NavLink = (route: string, text: string): ReactElement => {
   return (
     <Nav.Link as={Link} to={route} style={styles}>
       {text}
@@ -28,7 +28,7 @@ const NavLink = (route, text) => {
   );
 };
 
-const CustomNavbar = () => {
+const CustomNavbar = (): ReactElement => {
   return (
     <Navbar
       sticky={"top"}
