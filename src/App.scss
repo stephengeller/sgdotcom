@@ -1,4 +1,5 @@
-$background-color: #202020;
+//$background-color: #202020;
+$background-color: black;
 $navbar-transparent: rgba(0, 0, 0, 0.09);
 
 body {
@@ -37,7 +38,70 @@ body,
   backdrop-filter: blur(10px);
 }
 
-@media (max-width: 576px) {
+
+// desktop
+@media  (max-width: 2000px) {
+  .about-contents {
+    font-size: 200%;
+  }
+
+  .landing-header {
+       font-size: 75px;
+       padding-left: 10%;
+       padding-right: 10%;
+     }
+
+  .landing-subheader {
+    font-size: 35px;
+  }
+
+  .contact-icon {
+    font-size: 10vw;
+    margin: 0 2vw;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .about-contents h1 {
+    font-size: 150%;
+  }
+
+  .about-contents {
+    font-size: 150%;
+  }
+
+  .landing-header {
+    font-size: 60px;
+  }
+
+  .landing-subheader {
+    font-size: 30px;
+  }
+
+  .contact-icon {
+    font-size: 10vw;
+    margin: 0 2vw;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  .about-contents {
+    font-size: 100%;
+  }
+
+  .landing-header {
+    font-size: 40px;
+  }
+
+  .landing-subheader {
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .github-nav {
     margin-top: 5px;
     margin-bottom: 15px;
@@ -53,9 +117,3 @@ body,
   }
 }
 
-@media (max-width: 845px) {
-  .contact-icon {
-    font-size: 10vw;
-    margin: 0 2vw;
-  }
-}

@@ -37,7 +37,7 @@ export const About = (): ReactElement => {
       <CustomNavbar />
       <div className="mobile-container" style={style}>
         <Container>
-          <div>{contents}</div>
+          <div className={"about-contents"}>{contents}</div>
         </Container>
       </div>
     </div>
