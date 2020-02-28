@@ -22,12 +22,15 @@ const popover = (
 );
 
 const My404 = (): ReactElement => (
-  <Container>
-    <h1>Page not found!</h1>
-    <p>
-      <Link to={ROUTES.LANDING}>Go back.</Link>
-    </p>
-  </Container>
+  <div>
+    <CustomNavbar />
+    <Container>
+      <h1>Page not found!</h1>
+      <p>
+        <Link to={ROUTES.LANDING}>Go back.</Link>
+      </p>
+    </Container>
+  </div>
 );
 
 const Surprise = (): ReactElement => (

@@ -2,7 +2,6 @@ import React, { ReactElement } from "react";
 import Container from "react-bootstrap/Container";
 import URLS from "../constants/urls.json";
 import CustomNavbar from "./Nav/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
 
 const style = {};
 
