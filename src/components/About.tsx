@@ -14,7 +14,7 @@ const contents = (
     </p>
     <p>
       I am proficient in multiple languages and frameworks, and specialised in
-      Javascript, Scala and Python.
+      Javascript (including Node, Typescript and React), Ruby and Python.
     </p>
     <p>
       As an Agile and XP advocate, I produce reliable, legible and tested code,
