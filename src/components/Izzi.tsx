@@ -7,13 +7,10 @@ const style = {
   backgroundColor: "transparent"
 } as React.CSSProperties;
 
-export const Gallery = (): ReactElement => {
+export const Izzi = (): ReactElement => {
   return (
-    <div>
-      <CustomNavbar />
-      <Container className="mobile-container" style={style}>
-        <h1>Coming soon!</h1>
-      </Container>
-    </div>
+    <Container className="mobile-container" style={style}>
+      <h1>Happy birthday!</h1>
+    </Container>
   );
 };

@@ -4,14 +4,14 @@ import Container from "react-bootstrap/Container";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Button from "react-bootstrap/Button";
+import ROUTES from "./constants/routes.json";
 
-import CustomNavbar from "./components/Navbar";
+import CustomNavbar from "./components/Nav/Navbar";
 import { Landing } from "./components/Landing";
 import { Contact } from "./components/Contact";
 import { About } from "./components/About";
-
-import ROUTES from "./constants/routes.json";
 import { Gallery } from "./components/Gallery";
+import { Izzi } from "./components/Izzi";
 
 const popover = (
   <Popover id="popover-basic">
@@ -40,13 +40,13 @@ const Surprise = (): ReactElement => (
 
 const App = (): ReactElement => (
   <Router>
-    <CustomNavbar />
     <Switch>
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route exact path={ROUTES.ABOUT} component={About} />
       <Route exact path={ROUTES.GALLERY} component={Gallery} />
       <Route exact path={ROUTES.CONTACT} component={Contact} />
       <Route exact path={ROUTES.SURPRISE} component={Surprise} />
+      <Route exact path={ROUTES.IZZI} component={Izzi} />
       <Route component={My404} />
     </Switch>
   </Router>

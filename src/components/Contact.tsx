@@ -9,6 +9,7 @@ import {
 
 import URLS from "../constants/urls.json";
 import { IconType } from "react-icons";
+import CustomNavbar from "./Nav/Navbar";
 
 const parent = {
   textAlign: "center",
@@ -37,13 +38,16 @@ function contactIcon(link: string, Icon: IconType): ReactElement {
 
 export const Contact = (): ReactElement => {
   return (
-    <div style={parent} className="mobile-container">
-      <div style={child} className="contact-icons">
-        {contactIcon(URLS.GITHUB, FaGithub)}
-        {contactIcon(URLS.TWITTER, FaTwitter)}
-        {contactIcon(URLS.INSTAGRAM, FaInstagram)}
-        {contactIcon(URLS.LINKEDIN, FaLinkedin)}
-        {contactIcon(URLS.EMAIL, FaEnvelope)}
+    <div>
+      <CustomNavbar />
+      <div style={parent} className="mobile-container">
+        <div style={child} className="contact-icons">
+          {contactIcon(URLS.GITHUB, FaGithub)}
+          {contactIcon(URLS.TWITTER, FaTwitter)}
+          {contactIcon(URLS.INSTAGRAM, FaInstagram)}
+          {contactIcon(URLS.LINKEDIN, FaLinkedin)}
+          {contactIcon(URLS.EMAIL, FaEnvelope)}
+        </div>
       </div>
     </div>
   );

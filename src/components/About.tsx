@@ -1,6 +1,8 @@
 import React, { ReactElement } from "react";
 import Container from "react-bootstrap/Container";
 import URLS from "../constants/urls.json";
+import CustomNavbar from "./Nav/Navbar";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const style = {};
 
@@ -32,10 +34,13 @@ const contents = (
 
 export const About = (): ReactElement => {
   return (
-    <div className="mobile-container" style={style}>
-      <Container>
-        <div>{contents}</div>
-      </Container>
+    <div>
+      <CustomNavbar />
+      <div className="mobile-container" style={style}>
+        <Container>
+          <div>{contents}</div>
+        </Container>
+      </div>
     </div>
   );
 };

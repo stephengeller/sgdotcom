@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
+import CustomNavbar from "./Nav/Navbar";
 
 const carouselImageStyle = {
   height: "-webkit-fill-available",
@@ -44,6 +45,7 @@ const getInTouchSub = (
 export const Landing = (): ReactElement => {
   return (
     <div>
+      <CustomNavbar />
       <Carousel interval={10000} style={carouselStyle}>
         {carouselItem(
           "img/StephenJapan2.jpg",
