@@ -7,11 +7,12 @@ import { FaGithub } from "react-icons/fa";
 
 import ROUTES from "../../constants/routes.json";
 import URLS from "../../constants/urls.json";
+import { colours } from "../../constants/colours";
 
 const imgSize = 50;
 
 const styles = {
-  color: "white",
+  color: colours.COLOURS.backgroundColor,
   padding: ".5rem 1rem",
   display: "-webkit-block"
 };
@@ -28,14 +29,18 @@ const NavLink = (route: string, text: string): ReactElement => {
   );
 };
 
-const CustomNavbar = (): ReactElement => {
+function CustomNavbar({
+  style
+}: {
+  style?: React.CSSProperties;
+}): ReactElement {
   return (
     <Navbar
       fixed={"bottom"}
       collapseOnSelect
       expand={"sm"}
       variant="dark"
-      style={navBarStyle}
+      style={{ ...navBarStyle, ...style }}
     >
       <Navbar.Brand>
         <Link to={ROUTES.LANDING} style={{ marginLeft: "0px" }}>
@@ -66,6 +71,6 @@ const CustomNavbar = (): ReactElement => {
       </Navbar.Collapse>
     </Navbar>
   );
-};
+}
 
 export default CustomNavbar;

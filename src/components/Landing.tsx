@@ -39,11 +39,15 @@ export const Landing = (): ReactElement => {
   return (
     <div>
       <CustomNavbar />
-      <LazyHero imageSrc="https://unsplash.it/2000/1000">
+      <LazyHero
+        imageSrc="https://unsplash.it/2000/1000"
+        style={{ color: "red", height: "100vh" }}
+      >
         <LandingItem
           style={{
             padding: "1vh",
             color: "#270722"
+            // height: "100vh"
           }}
           text={"Hi, I'm Stephen."}
           sub={"I'm a software developer."}

@@ -1,4 +1,4 @@
-module.exports = {
+export const colours = {
   COLOURS: {
     backgroundColor: "#270722",
     navbarTransparent: "rgba(0, 0, 0, 0)",
