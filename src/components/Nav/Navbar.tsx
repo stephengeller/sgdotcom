@@ -31,7 +31,7 @@ const NavLink = (route: string, text: string): ReactElement => {
 const CustomNavbar = (): ReactElement => {
   return (
     <Navbar
-      sticky={"top"}
+      fixed={"bottom"}
       collapseOnSelect
       expand={"sm"}
       variant="dark"

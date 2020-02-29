@@ -34,9 +34,9 @@ const BirthdayButton: React.FC<{ click: Function }> = ({ click }) => {
 };
 
 export class Izzi extends Component<{}, IzziState> {
-  private clicks: number;
-  constructor({}) {
-    super({});
+  private readonly clicks: number;
+  constructor(props) {
+    super(props);
     this.clicks = 0;
   }
 

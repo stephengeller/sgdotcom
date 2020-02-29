@@ -1,24 +1,28 @@
 import React, { ReactElement } from "react";
 import CustomNavbar from "./Nav/Navbar";
+import LazyHero from "react-lazy-hero";
 
 type LandingItemProps = {
   text: string;
   sub: string | JSX.Element;
   image?: string;
+  style?: React.CSSProperties;
 };
 
 const LandingItemStyle = {
-  marginBottom: "10vh"
+  marginBottom: "10vh",
+  color: "#9AC2C5"
 } as React.CSSProperties;
 
 function LandingItem({
   text,
   sub,
-  image
+  image,
+  style = {}
 }: LandingItemProps): React.ReactElement<LandingItemProps> {
   console.log(image);
   return (
-    <div style={LandingItemStyle}>
+    <div style={{ ...LandingItemStyle, ...style }}>
       <h1 className={"landing-header"}>{text}</h1>
       <h2 className={"landing-subheader"}>{sub}</h2>
     </div>
@@ -35,6 +39,17 @@ export const Landing = (): ReactElement => {
   return (
     <div>
       <CustomNavbar />
+      <LazyHero imageSrc="https://unsplash.it/2000/1000">
+        <LandingItem
+          style={{
+            padding: "1vh",
+            color: "#270722"
+          }}
+          text={"Hi, I'm Stephen."}
+          sub={"I'm a software developer."}
+          image={"img/StephenJapan2.jpg"}
+        />
+      </LazyHero>
       <div
         style={{
           display: "flex",
@@ -46,11 +61,6 @@ export const Landing = (): ReactElement => {
         }}
       >
         <LandingItem
-          text={"Hi, I'm Stephen."}
-          sub={"I write code for a living."}
-          image={"img/StephenJapan2.jpg"}
-        />
-        <LandingItem
           text={"I like to write reliable and refined code."}
           sub={"I deliver clean and tested code quickly and consistently."}
           image={"img/AfterlightImage.jpg"}
@@ -61,24 +71,6 @@ export const Landing = (): ReactElement => {
           image={"img/KyotoStreets.jpg"}
         />
       </div>
-
-      {/*<Carousel interval={10000} style={carouselStyle}>*/}
-      {/*  {carouselItem(*/}
-      {/*    "img/StephenJapan2.jpg",*/}
-      {/*    "Hi, I'm Stephen.",*/}
-      {/*    "I write code for a living."*/}
-      {/*  )}*/}
-      {/*  {carouselItem(*/}
-      {/*    "img/AfterlightImage.jpg",*/}
-      {/*    "I like photography",*/}
-      {/*    "For now, I take pictures with an iPhone."*/}
-      {/*  )}*/}
-      {/*  {carouselItem(*/}
-      {/*    "img/KyotoStreets.jpg",*/}
-      {/*    "Get in touch with me.",*/}
-      {/*    getInTouchSub*/}
-      {/*  )}*/}
-      {/*</Carousel>*/}
     </div>
   );
 };

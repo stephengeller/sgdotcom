@@ -1,6 +1,10 @@
 //$background-color: #202020;
-$background-color: black;
-$navbar-transparent: rgba(0, 0, 0, 0.09);
+$background-color: #270722;
+$navbar-transparent: rgba(0, 0, 0, 0);
+$pale-gold: #ECCE8E;
+$lightpale-gold: #DBCF96;
+$dark-vanilla: #C2C6A7;
+$pale-cerulean: #9AC2C5;
 
 body {
   margin: 0;
@@ -25,17 +29,13 @@ body,
   color: white;
 }
 
-.nav-link {
-  color: white;
-}
-
 .nav-link:hover {
   color: #d3d3d3 !important;
 }
 
 .navbar {
   background-color: $navbar-transparent;
-  backdrop-filter: blur(10px);
+  //backdrop-filter: blur(10px);
 }
 
 
