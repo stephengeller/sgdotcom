@@ -26,11 +26,13 @@ body,
 #app > div,
 #root {
   background-color: $background-color;
-  color: white;
+  color: black;
 }
 
 .nav-link:hover {
-  color: #d3d3d3 !important;
+  color: blue !important;
+  cursor: pointer;
+  text-decoration: darkgray;
 }
 
 .navbar {
@@ -38,18 +40,17 @@ body,
   //backdrop-filter: blur(10px);
 }
 
-
 // desktop
-@media  (max-width: 2000px) {
+@media  (max-width: 1920px) {
   .about-contents {
     font-size: 200%;
   }
 
   .landing-header {
-       font-size: 75px;
-       padding-left: 10%;
-       padding-right: 10%;
-     }
+    font-size: 75px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 
   .landing-subheader {
     font-size: 35px;
@@ -61,8 +62,7 @@ body,
   }
 }
 
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1366px) {
   .about-contents h1 {
     font-size: 150%;
   }
@@ -85,9 +85,7 @@ body,
   }
 }
 
-
-
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .about-contents {
     font-size: 100%;
   }
@@ -117,3 +115,11 @@ body,
   }
 }
 
+
+@media (max-width: 414px) {
+  .nav-link {
+    color: blue;
+    font-size: 1px;
+  }
+
+}

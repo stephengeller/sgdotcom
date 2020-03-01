@@ -11,7 +11,7 @@ import { colours } from "../../constants/colours";
 
 const imgSize = 50;
 
-const styles = {
+const navLinkStyle = {
   color: colours.COLOURS.backgroundColor,
   padding: ".5rem 1rem",
   display: "-webkit-block"
@@ -23,7 +23,7 @@ const navBarStyle = {
 
 const NavLink = (route: string, text: string): ReactElement => {
   return (
-    <Nav.Link as={Link} to={route} style={styles}>
+    <Nav.Link as={Link} to={route} style={navLinkStyle}>
       {text}
     </Nav.Link>
   );
@@ -62,7 +62,7 @@ function CustomNavbar({
           <a
             rel="noopener noreferrer"
             target="_blank"
-            style={styles}
+            style={navLinkStyle}
             href={URLS.GITHUB}
           >
             <FaGithub style={{ fontSize: "150%" }} />

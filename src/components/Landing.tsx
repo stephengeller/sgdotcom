@@ -1,6 +1,6 @@
-import React, { ReactElement } from "react";
-import CustomNavbar from "./Nav/Navbar";
+import React, { ReactElement, useState } from "react";
 import LazyHero from "react-lazy-hero";
+import LandingNavbar from "./Nav/LandingNavbar";
 
 type LandingItemProps = {
   text: string;
@@ -29,52 +29,33 @@ function LandingItem({
   );
 }
 
-const getInTouchSub = (
-  <a href={"/contact"} className={"nav-link"} style={{ textDecoration: "" }}>
-    Click here for my deets.
-  </a>
-);
+export const LandingGreeting = () => {
+  return (
+    <LandingItem
+      style={{
+        padding: "1vh",
+        color: "#270722"
+        // height: "100vh"
+      }}
+      text={"Hi, I'm Stephen."}
+      sub={"I'm a software developer."}
+      image={"img/StephenJapan2.jpg"}
+    />
+  );
+};
 
 export const Landing = (): ReactElement => {
+  const [section, setSection] = useState(<LandingGreeting />);
+
   return (
     <div>
-      <CustomNavbar />
       <LazyHero
         imageSrc="https://unsplash.it/2000/1000"
-        style={{ color: "red", height: "100vh" }}
+        style={{ height: "100vh" }}
       >
-        <LandingItem
-          style={{
-            padding: "1vh",
-            color: "#270722"
-            // height: "100vh"
-          }}
-          text={"Hi, I'm Stephen."}
-          sub={"I'm a software developer."}
-          image={"img/StephenJapan2.jpg"}
-        />
+        {section}
       </LazyHero>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          textAlign: "center",
-          flexDirection: "column",
-          height: "80vh",
-          paddingTop: "15vh"
-        }}
-      >
-        <LandingItem
-          text={"I like to write reliable and refined code."}
-          sub={"I deliver clean and tested code quickly and consistently."}
-          image={"img/AfterlightImage.jpg"}
-        />
-        <LandingItem
-          text={"Get in touch with me."}
-          sub={getInTouchSub}
-          image={"img/KyotoStreets.jpg"}
-        />
-      </div>
+      <LandingNavbar setSection={setSection} />
     </div>
   );
 };
