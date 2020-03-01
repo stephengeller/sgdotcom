@@ -29,6 +29,8 @@ body,
   color: black;
 }
 
+.nav-link:focus {outline:none  ;}
+
 .nav-link:hover {
   color: blue !important;
   cursor: pointer;
