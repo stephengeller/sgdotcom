@@ -25,7 +25,7 @@ const imgSize = 50;
 
 const navLinkStyle = {
   color: "black",
-  padding: ".5rem 1rem",
+  padding: "0.5rem 1rem",
   display: "-webkit-block",
   border: "none",
   background: "none",
@@ -33,7 +33,8 @@ const navLinkStyle = {
 };
 
 const navBarStyle = {
-  marginBottom: "1vh"
+  marginTop: "1vh",
+  bottom: 0
 };
 
 const NavLink = ({
@@ -44,8 +45,11 @@ const NavLink = ({
 }: NavLinkProps): ReactElement => {
   return (
     <div
+      role={"button"}
+      tabIndex={0}
+      onKeyDown={(): void => setSection(component)}
       className={"nav-link"}
-      onClick={() => setSection(component)}
+      onClick={(): void => setSection(component)}
       style={navLinkStyle}
     >
       <div>
@@ -72,7 +76,7 @@ function LandingNavbar({
         <NavLink setSection={setSection} component={<LandingGreeting />}>
           <img
             style={{ marginLeft: "0px", paddingLeft: "0" }}
-            src="img/stephenCartoonSmall.png"
+            src={"img/stephenCartoonSmall.png"}
             width={imgSize}
             height={imgSize}
             className="d-inline-block align-top"

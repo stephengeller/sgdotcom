@@ -9,7 +9,7 @@ const style = {
 export const Gallery = (): ReactElement => {
   return (
     <div>
-      <Container className="mobile-container" style={style}>
+      <Container style={style}>
         <h1>Coming soon!</h1>
       </Container>
     </div>

@@ -18,7 +18,7 @@ const navLinkStyle = {
 };
 
 const navBarStyle = {
-  marginBottom: "1vh"
+  marginTop: "1vh"
 };
 
 const NavLink = (route: string, text: string): ReactElement => {
@@ -46,7 +46,7 @@ function CustomNavbar({
         <Link to={ROUTES.LANDING} style={{ marginLeft: "0px" }}>
           <img
             alt=""
-            src="img/stephenCartoonSmall.png"
+            src={"img/stephenCartoonSmall.png"}
             width={imgSize}
             height={imgSize}
             className="d-inline-block align-top"

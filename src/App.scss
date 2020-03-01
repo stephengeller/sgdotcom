@@ -1,6 +1,6 @@
 //$background-color: #202020;
 $background-color: #270722;
-$navbar-transparent: rgba(0, 0, 0, 0);
+$navbar-transparent: rgba(255, 255, 255, 0);
 $pale-gold: #ECCE8E;
 $lightpale-gold: #DBCF96;
 $dark-vanilla: #C2C6A7;
@@ -38,6 +38,12 @@ body,
 .navbar {
   background-color: $navbar-transparent;
   //backdrop-filter: blur(10px);
+}
+
+.navbar-collapse.collapse.show {
+  background-color: rgba(0,0,0,0);
+  backdrop-filter: blur(10px);
+  margin: 0
 }
 
 // desktop
@@ -103,10 +109,6 @@ body,
   .github-nav {
     margin-top: 5px;
     margin-bottom: 15px;
-  }
-
-  .mobile-container {
-    height: 60vh !important;
   }
 
   .contact-icon {

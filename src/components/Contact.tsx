@@ -12,9 +12,7 @@ import { IconType } from "react-icons";
 
 const parent = {
   textAlign: "center",
-  display: "table",
-  width: "100%",
-  height: "80vh"
+  display: "table"
 } as React.CSSProperties;
 
 const child = {
@@ -44,7 +42,7 @@ function ContactIcon({ link, Icon }: ContactIconProps): ReactElement {
 export const Contact = (): ReactElement => {
   return (
     <div>
-      <div style={parent} className="mobile-container">
+      <div style={parent}>
         <div style={child} className="contact-icons">
           <ContactIcon link={URLS.GITHUB} Icon={FaGithub} />
           <ContactIcon link={URLS.TWITTER} Icon={FaTwitter} />
