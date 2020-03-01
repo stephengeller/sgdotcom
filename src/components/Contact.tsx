@@ -24,7 +24,8 @@ const child = {
 
 const iconStyle = {
   fontSize: "8vw",
-  margin: "0 5vw"
+  margin: "0 5vw",
+  color: "black"
 };
 
 interface ContactIconProps {
