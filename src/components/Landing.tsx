@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from "react";
 import LazyHero from "react-lazy-hero";
+import Div100vh from "react-div-100vh";
 import LandingNavbar from "./Nav/LandingNavbar";
 
 type LandingItemProps = {
@@ -48,7 +49,7 @@ export const Landing = (): ReactElement => {
   const [section, setSection] = useState(<LandingGreeting />);
 
   return (
-    <div>
+    <Div100vh>
       <LazyHero
         imageSrc="https://unsplash.it/2000/1000"
         style={{ height: "100vh" }}
@@ -56,6 +57,6 @@ export const Landing = (): ReactElement => {
         {section}
       </LazyHero>
       <LandingNavbar setSection={setSection} />
-    </div>
+    </Div100vh>
   );
 };
