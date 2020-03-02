@@ -1,5 +1,5 @@
 import Navbar from "react-bootstrap/Navbar";
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import NavItem from "react-bootstrap/NavItem";
 import { FaGithub } from "react-icons/fa";
 
@@ -10,9 +10,10 @@ import { Contact } from "../Contact";
 import { LandingGreeting } from "../Landing";
 
 interface NavLinkProps {
+  selected: string;
   text?: string;
   children?: ReactElement;
-  setSection: Function;
+  fns: { setSelected: Function; setSection: Function };
   component: ReactElement;
 }
 
@@ -38,19 +39,31 @@ const navBarStyle = {
 };
 
 const NavLink = ({
+  selected,
   text,
   children,
-  setSection,
+  fns,
   component
 }: NavLinkProps): ReactElement => {
+  const click = (): void => {
+    fns.setSelected(text || "");
+    fns.setSection(component);
+  };
+
+  const isSelected = selected === text;
+
   return (
     <div
       role={"button"}
       tabIndex={0}
-      onKeyDown={(): void => setSection(component)}
-      className={"nav-link"}
-      onClick={(): void => setSection(component)}
-      style={navLinkStyle}
+      onKeyDown={({ key, keyCode }): void => {
+        key === "Enter" || keyCode === 32
+          ? click()
+          : console.log("selected", key);
+      }}
+      className={`nav-link${isSelected ? " selected" : ""}`}
+      onClick={(): void => click()}
+      style={{ ...navLinkStyle, color: isSelected ? "dodgerblue" : "black" }}
     >
       <div>
         {text}
@@ -64,6 +77,7 @@ function LandingNavbar({
   style,
   setSection
 }: LandingNavbarProps): ReactElement {
+  const [selected, setSelected] = useState("");
   return (
     <Navbar
       fixed={"bottom"}
@@ -73,7 +87,11 @@ function LandingNavbar({
       style={{ ...navBarStyle, ...style }}
     >
       <Navbar.Brand>
-        <NavLink setSection={setSection} component={<LandingGreeting />}>
+        <NavLink
+          selected={selected}
+          fns={{ setSelected, setSection }}
+          component={<LandingGreeting />}
+        >
           <img
             style={{ marginLeft: "0px", paddingLeft: "0" }}
             src={"img/stephenCartoonSmall.png"}
@@ -86,14 +104,21 @@ function LandingNavbar({
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
-        <NavLink setSection={setSection} component={<About />} text={"About"} />
         <NavLink
-          setSection={setSection}
+          fns={{ setSelected, setSection }}
+          selected={selected}
+          component={<About />}
+          text={"About"}
+        />
+        <NavLink
+          fns={{ setSelected, setSection }}
+          selected={selected}
           component={<Gallery />}
           text={"Gallery"}
         />
         <NavLink
-          setSection={setSection}
+          fns={{ setSelected, setSection }}
+          selected={selected}
           component={<Contact />}
           text={"Contact"}
         />

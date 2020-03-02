@@ -32,7 +32,7 @@ body,
 .nav-link:focus {outline:none  ;}
 
 .nav-link:hover {
-  color: blue !important;
+  color: dodgerblue !important;
   cursor: pointer;
   text-decoration: darkgray;
 }
@@ -47,6 +47,25 @@ body,
   backdrop-filter: blur(7px);
   border-radius: 10px;
   margin: 0
+}
+
+.about-contents {
+  font-size: 300%;
+}
+
+.landing-header {
+  font-size: 75px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.landing-subheader {
+  font-size: 35px;
+}
+
+.contact-icon {
+  font-size: 10vw;
+  margin: 0 2vw;
 }
 
 // desktop
