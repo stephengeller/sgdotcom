@@ -25,7 +25,7 @@ const birthdayStyle = css({
 const BirthdayButton: React.FC<{ click: Function }> = ({ click }) => {
   return (
     <button
-      onClick={() => click()}
+      onClick={(): void => click()}
       css={css({ backgroundColor: "inherit", border: "none", padding: 0 })}
     >
       <code css={birthdayStyle}>Happy birthday!</code>
@@ -34,9 +34,9 @@ const BirthdayButton: React.FC<{ click: Function }> = ({ click }) => {
 };
 
 export class Izzi extends Component<{}, IzziState> {
-  private clicks: number;
-  constructor({}) {
-    super({});
+  private readonly clicks: number;
+  constructor(props) {
+    super(props);
     this.clicks = 0;
   }
 
@@ -48,7 +48,7 @@ export class Izzi extends Component<{}, IzziState> {
     console.log("clicked!", this.clicks);
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <div css={parent}>
         <div css={css({ fontSize: "10vw", alignSelf: "center" })}>

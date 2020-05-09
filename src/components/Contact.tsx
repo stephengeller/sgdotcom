@@ -9,13 +9,10 @@ import {
 
 import URLS from "../constants/urls.json";
 import { IconType } from "react-icons";
-import CustomNavbar from "./Nav/Navbar";
 
 const parent = {
   textAlign: "center",
-  display: "table",
-  width: "100%",
-  height: "80vh"
+  display: "table"
 } as React.CSSProperties;
 
 const child = {
@@ -25,10 +22,16 @@ const child = {
 
 const iconStyle = {
   fontSize: "8vw",
-  margin: "0 5vw"
+  margin: "0 5vw",
+  color: "black"
 };
 
-function contactIcon(link: string, Icon: IconType): ReactElement {
+interface ContactIconProps {
+  link: string;
+  Icon: IconType;
+}
+
+function ContactIcon({ link, Icon }: ContactIconProps): ReactElement {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <Icon className="contact-icon" style={iconStyle} />
@@ -39,14 +42,13 @@ function contactIcon(link: string, Icon: IconType): ReactElement {
 export const Contact = (): ReactElement => {
   return (
     <div>
-      <CustomNavbar />
-      <div style={parent} className="mobile-container">
+      <div style={parent}>
         <div style={child} className="contact-icons">
-          {contactIcon(URLS.GITHUB, FaGithub)}
-          {contactIcon(URLS.TWITTER, FaTwitter)}
-          {contactIcon(URLS.INSTAGRAM, FaInstagram)}
-          {contactIcon(URLS.LINKEDIN, FaLinkedin)}
-          {contactIcon(URLS.EMAIL, FaEnvelope)}
+          <ContactIcon link={URLS.GITHUB} Icon={FaGithub} />
+          <ContactIcon link={URLS.TWITTER} Icon={FaTwitter} />
+          <ContactIcon link={URLS.INSTAGRAM} Icon={FaInstagram} />
+          <ContactIcon link={URLS.LINKEDIN} Icon={FaLinkedin} />
+          <ContactIcon link={URLS.EMAIL} Icon={FaEnvelope} />
         </div>
       </div>
     </div>

@@ -7,41 +7,46 @@ import { FaGithub } from "react-icons/fa";
 
 import ROUTES from "../../constants/routes.json";
 import URLS from "../../constants/urls.json";
+import { colours } from "../../constants/colours";
 
 const imgSize = 50;
 
-const styles = {
-  color: "white",
+const navLinkStyle = {
+  color: colours.COLOURS.backgroundColor,
   padding: ".5rem 1rem",
   display: "-webkit-block"
 };
 
 const navBarStyle = {
-  marginBottom: "1vh"
+  marginTop: "1vh"
 };
 
 const NavLink = (route: string, text: string): ReactElement => {
   return (
-    <Nav.Link as={Link} to={route} style={styles}>
+    <Nav.Link as={Link} to={route} style={navLinkStyle}>
       {text}
     </Nav.Link>
   );
 };
 
-const CustomNavbar = (): ReactElement => {
+function CustomNavbar({
+  style
+}: {
+  style?: React.CSSProperties;
+}): ReactElement {
   return (
     <Navbar
-      sticky={"top"}
+      fixed={"bottom"}
       collapseOnSelect
       expand={"sm"}
       variant="dark"
-      style={navBarStyle}
+      style={{ ...navBarStyle, ...style }}
     >
       <Navbar.Brand>
         <Link to={ROUTES.LANDING} style={{ marginLeft: "0px" }}>
           <img
             alt=""
-            src="img/stephenCartoonSmall.png"
+            src={"img/stephenCartoonSmall.png"}
             width={imgSize}
             height={imgSize}
             className="d-inline-block align-top"
@@ -57,7 +62,7 @@ const CustomNavbar = (): ReactElement => {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            style={styles}
+            style={navLinkStyle}
             href={URLS.GITHUB}
           >
             <FaGithub style={{ fontSize: "150%" }} />
@@ -66,6 +71,6 @@ const CustomNavbar = (): ReactElement => {
       </Navbar.Collapse>
     </Navbar>
   );
-};
+}
 
 export default CustomNavbar;

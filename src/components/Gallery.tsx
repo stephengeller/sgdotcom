@@ -1,6 +1,5 @@
 import React, { ReactElement } from "react";
 import Container from "react-bootstrap/Container";
-import CustomNavbar from "./Nav/Navbar";
 
 const style = {
   textAlign: "center",
@@ -10,8 +9,7 @@ const style = {
 export const Gallery = (): ReactElement => {
   return (
     <div>
-      <CustomNavbar />
-      <Container className="mobile-container" style={style}>
+      <Container style={style}>
         <h1>Coming soon!</h1>
       </Container>
     </div>

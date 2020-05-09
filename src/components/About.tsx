@@ -1,9 +1,12 @@
 import React, { ReactElement } from "react";
 import Container from "react-bootstrap/Container";
 import URLS from "../constants/urls.json";
-import CustomNavbar from "./Nav/Navbar";
 
-const style = {};
+const style = {
+  textAlign: "left",
+  backgroundColor: "rgba(255, 255, 255, 0.1)",
+  padding: "1vw"
+} as React.CSSProperties;
 
 const contents = (
   <div>
@@ -14,7 +17,7 @@ const contents = (
     </p>
     <p>
       I am proficient in multiple languages and frameworks, and specialised in
-      Javascript, Scala and Python.
+      Javascript (including Node, Typescript and React), Ruby and Python.
     </p>
     <p>
       As an Agile and XP advocate, I produce reliable, legible and tested code,
@@ -33,13 +36,10 @@ const contents = (
 
 export const About = (): ReactElement => {
   return (
-    <div>
-      <CustomNavbar />
-      <div className="mobile-container" style={style}>
-        <Container>
-          <div>{contents}</div>
-        </Container>
-      </div>
+    <div style={style}>
+      <Container>
+        <div className={"about-contents"}>{contents}</div>
+      </Container>
     </div>
   );
 };
