@@ -3,4 +3,4 @@
 set -xe
 
 yarn build
-firebase deploy
+yarn deploy
