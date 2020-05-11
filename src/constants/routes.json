@@ -5,5 +5,9 @@
   "HOME": "/home",
   "CONTACT": "/contact",
   "SURPRISE": "/surprise",
-  "IZZI": "/izzi"
+  "IZZI": {
+    "ROOT": "/izzi",
+    "FACTS": "facts",
+    "QUIZ": "quiz"
+  }
 }

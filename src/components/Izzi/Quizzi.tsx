@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import React, { Component } from "react";
 import { css, jsx } from "@emotion/core";
+import { Link } from "react-router-dom";
+import ROUTES from "../../constants/routes.json";
 
 type IzziState = {
   clicks: number;
@@ -12,13 +14,13 @@ const parent = css({
   justifyContent: "center",
   height: "100vh",
   padding: "0",
-  margin: "0"
+  margin: "0",
 });
 
 const birthdayStyle = css({
   ":hover": {
-    color: "#ce5f91;"
-  }
+    color: "#ce5f91;",
+  },
 });
 
 // eslint-disable-next-line react/prop-types
@@ -33,31 +35,32 @@ const BirthdayButton: React.FC<{ click: Function }> = ({ click }) => {
   );
 };
 
-export class Izzi extends Component<{}, IzziState> {
-  private readonly clicks: number;
+// TODO: Check this out for tips: https://www.google.com/search?q=quiz+game+library+react&rlz=1C5CHFA_enGB872GB872&oq=quiz+game+library+react&aqs=chrome..69i57j0l7.9496j0j7&sourceid=chrome&ie=UTF-8
+export class Quizzi extends Component<{}, IzziState> {
   constructor(props) {
     super(props);
-    this.clicks = 0;
+    this.state = { clicks: 0 };
   }
 
   click(): void {
-    const currentClicks = this.clicks;
-    this.setState({
-      clicks: currentClicks + 1
-    });
-    console.log("clicked!", this.clicks);
+    const newCount = this.state.clicks + 1;
+    this.setState({ clicks: newCount });
   }
 
   render(): JSX.Element {
     return (
       <div css={parent}>
-        <div css={css({ fontSize: "10vw", alignSelf: "center" })}>
+        <div
+          css={css({ fontSize: "10vw", alignSelf: "center", color: "white" })}
+        >
           <span>Hey Izzi,</span>
           <br />
-          {this.clicks < 3 ? (
-            <BirthdayButton click={this.click.bind(this)} />
+          {this.state.clicks >= 3 ? (
+            <Link to={`${ROUTES.IZZI.ROOT}/${ROUTES.IZZI.QUIZ}`}>
+              Take the quiz.
+            </Link>
           ) : (
-            "done"
+            <BirthdayButton click={this.click.bind(this)} />
           )}
 
           <br />
@@ -67,20 +70,3 @@ export class Izzi extends Component<{}, IzziState> {
     );
   }
 }
-
-// export const Izzi: React.FC = (): ReactElement => {
-//   const [count, setCount] = useState(0);
-//   console.log(count);
-//   return (
-//     <div css={parent}>
-//       <div css={css({ fontSize: "10vw", alignSelf: "center" })}>
-//         <span>Hey Izzi,</span>
-//         <br />
-//         <BirthdayButton />
-//
-//         <br />
-//         <code style={{ fontSize: "50%" }}>Click me ^^^</code>
-//       </div>
-//     </div>
-//   );
-// };

@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import ROUTES from "./constants/routes.json";
 
 import { Landing } from "./components/Landing";
-import { Izzi } from "./components/Izzi";
+import { Izzi } from "./components/Izzi/Izzi";
+import { Quizzi } from "./components/Izzi/Quizzi";
 
 const My404 = (): ReactElement => (
   <Div100vh>
@@ -16,7 +17,7 @@ const My404 = (): ReactElement => (
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        justifyContent: "center"
+        justifyContent: "center",
       }}
     >
       <h1>Page not found!</h1>
@@ -31,7 +32,12 @@ const App = (): ReactElement => (
   <Router>
     <Switch>
       <Route exact path={ROUTES.LANDING} component={Landing} />
-      <Route exact path={ROUTES.IZZI} component={Izzi} />
+      <Route exact path={ROUTES.IZZI.ROOT} component={Izzi} />
+      <Route
+        exact
+        path={ROUTES.IZZI.ROOT + "/" + ROUTES.IZZI.QUIZ}
+        component={Quizzi}
+      />
       <Route component={My404} />
     </Switch>
   </Router>
