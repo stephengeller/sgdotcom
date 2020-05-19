@@ -7,6 +7,7 @@ import { Landing } from "./components/Landing";
 import { Izzi } from "./components/Izzi/Izzi";
 import { Quizzi } from "./components/Izzi/Quizzi";
 import { CountdownComp } from "./components/Izzi/CountdownComp";
+import { IzziStats } from "./components/Izzi/IzziStats";
 
 const My404 = (): ReactElement => (
   <Div100vh>
@@ -36,6 +37,7 @@ const App = (): ReactElement => (
       <Route exact path={ROUTES.IZZI.ROOT} component={Izzi} />
       <Route exact path={ROUTES.IZZI.QUIZ} component={Quizzi} />
       <Route exact path={ROUTES.IZZI.COUNTDOWN} component={CountdownComp} />
+      <Route exact path={ROUTES.IZZI.STATS} component={IzziStats} />
       <Route component={My404} />
     </Switch>
   </Router>

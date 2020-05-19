@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Countdown from "react-countdown";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { Link } from "react-router-dom";
+import ROUTES from "../../constants/routes.json";
 
 const leavingDate = new Date(2019, 12, 18);
 const arrivingDate = new Date(2020, 10, 19);
@@ -78,7 +80,9 @@ export class CountdownComp extends Component<{}, {}> {
         <Countdown renderer={renderer} date={arrivingDate} />
         <div style={{ paddingTop: "20px", color: warmerColour }}>
           {"I love you so so so so so much"}
+          {/* Percentage of time since leaving until return */}
           <ProgressBar label={`${now()}%`} variant="success" now={now()} />
+          <Link to={ROUTES.IZZI.STATS}>Stats</Link>
         </div>
       </div>
     );
