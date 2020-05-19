@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import Countdown from "react-countdown";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
+const leavingDate = new Date(2019, 12, 18);
+const arrivingDate = new Date(2020, 10, 19);
+
+const warmerColour = "#e76f51";
 const styles = {
   parent: {
     display: "flex",
@@ -8,15 +13,14 @@ const styles = {
     justifyContent: "center",
     flexDirection: "column",
     height: "100vh",
-    padding: "10",
     margin: "0",
-    backgroundColor: "#eae2b7",
-    color: "#003049",
+    backgroundColor: "#264653",
+    color: "#f4a261",
     fontSize: "4.5vw",
     fontFamily: "helvetica"
   },
   countdownNumber: {
-    color: "#d62828",
+    color: warmerColour,
     fontWeight: "bold"
   }
 } as { [name: string]: React.CSSProperties };
@@ -57,24 +61,24 @@ const renderer: ({
   }
 };
 
-export class CountdownComp extends Component<{}, {}> {
-  constructor(props) {
-    super(props);
-    this.state = { clicks: 0 };
-  }
+const now = (): number => {
+  const total = leavingDate.getTime() + arrivingDate.getTime();
+  const now = Date.now();
+  return Number(((now / total) * 100).toFixed(3));
+};
 
+export class CountdownComp extends Component<{}, {}> {
   render(): JSX.Element {
     return (
       <div style={styles.parent}>
-        <div style={{ padding: "10px" }}>{"Hey bub!"}</div>
-        <div>
-          {"I hereby "}
-          <strong>promise</strong>
-          {" that I'll be with you in"}
+        <div style={{ paddingBottom: "10px", fontWeight: "bold" }}>
+          {"Hey bub!"}
         </div>
-        <Countdown renderer={renderer} date={new Date(2020, 10, 19)} />
-        <div style={{ padding: "20px", color: "#d62828" }}>
+        <div>{"I hereby promise that I'll be with you in"}</div>
+        <Countdown renderer={renderer} date={arrivingDate} />
+        <div style={{ paddingTop: "20px", color: warmerColour }}>
           {"I love you so so so so so much"}
+          <ProgressBar label={`${now()}%`} variant="success" now={now()} />
         </div>
       </div>
     );
