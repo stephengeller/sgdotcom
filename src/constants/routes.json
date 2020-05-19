@@ -9,6 +9,6 @@
     "ROOT": "/izzi",
     "FACTS": "/izzi/facts",
     "QUIZ": "/izzi/quiz",
-    "COUNTDOWN": "/izzi/countdown"
+    "COUNTDOWN": "/countdown"
   }
 }
