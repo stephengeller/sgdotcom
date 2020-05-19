@@ -14,7 +14,19 @@ const parent = css({
   color: "white"
 });
 
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
+const renderer: ({
+  days,
+  hours,
+  minutes,
+  seconds,
+  completed
+}: {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  completed: boolean;
+}) => JSX.Element = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     return <span>{"See you soon <3"}</span>;
   } else {
