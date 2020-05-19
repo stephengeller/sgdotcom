@@ -14,13 +14,13 @@ const parent = css({
   justifyContent: "center",
   height: "100vh",
   padding: "0",
-  margin: "0",
+  margin: "0"
 });
 
 const birthdayStyle = css({
   ":hover": {
-    color: "#ce5f91;",
-  },
+    color: "#ce5f91;"
+  }
 });
 
 // eslint-disable-next-line react/prop-types

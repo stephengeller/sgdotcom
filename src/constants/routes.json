@@ -7,7 +7,8 @@
   "SURPRISE": "/surprise",
   "IZZI": {
     "ROOT": "/izzi",
-    "FACTS": "facts",
-    "QUIZ": "quiz"
+    "FACTS": "/izzi/facts",
+    "QUIZ": "/izzi/quiz",
+    "COUNTDOWN": "/izzi/countdown"
   }
 }
