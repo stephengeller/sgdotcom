@@ -1,10 +1,8 @@
-/** @jsx jsx */
-import { Component } from "react";
-import { css, jsx } from "@emotion/core";
+import React, { Component } from "react";
 import Countdown from "react-countdown";
 
 const styles = {
-  parent: css({
+  parent: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -16,11 +14,12 @@ const styles = {
     color: "#003049",
     fontSize: "4.5vw",
     fontFamily: "helvetica"
-  }),
-  countdown: {
-    number: { color: "#d62828" }
+  },
+  countdownNumber: {
+    color: "#d62828",
+    fontWeight: "bold"
   }
-};
+} as { [name: string]: React.CSSProperties };
 
 const renderer: ({
   days,
@@ -41,17 +40,17 @@ const renderer: ({
     return (
       <div>
         <div>
-          <span style={styles.countdown.number}>{days}</span> days
+          <span style={styles.countdownNumber}>{days}</span> days
         </div>
         <div>
-          <span style={styles.countdown.number}>{hours}</span> hours
+          <span style={styles.countdownNumber}>{hours}</span> hours
         </div>
         <div>
-          <span style={styles.countdown.number}>{minutes}</span> minutes
+          <span style={styles.countdownNumber}>{minutes}</span> minutes
         </div>
         and
         <div>
-          <span style={styles.countdown.number}>{seconds}</span> seconds
+          <span style={styles.countdownNumber}>{seconds}</span> seconds
         </div>
       </div>
     );
@@ -66,7 +65,7 @@ export class CountdownComp extends Component<{}, {}> {
 
   render(): JSX.Element {
     return (
-      <div css={styles.parent}>
+      <div style={styles.parent}>
         <div style={{ padding: "10px" }}>{"Hey bub!"}</div>
         <div>
           {"I hereby "}
