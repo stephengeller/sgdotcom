@@ -22,13 +22,13 @@ const styles = {
   progressBar: { width: "80vw" }
 } as { [name: string]: React.CSSProperties };
 
-const leavingDate = new Date(2019, 12, 18);
-const arrivingDate = new Date(2020, 10, 19);
+export const leavingDate = new Date(2019, 11, 18);
+export const arrivingDate = new Date(2020, 7, 15);
 
-const now = (): number => {
-  const total = leavingDate.getTime() + arrivingDate.getTime();
-  const now = Date.now();
-  return Number(((now / total) * 100).toFixed(3));
+export const now = (leavingDate, arrivingDate): number => {
+  const total = arrivingDate.getTime() - leavingDate.getTime();
+  const now = Date.now() - leavingDate.getTime();
+  return Number(((now / total) * 100).toFixed(1));
 };
 
 const calculateTimePercent = (currentTime: number, totalTime: number) => {
@@ -37,19 +37,20 @@ const calculateTimePercent = (currentTime: number, totalTime: number) => {
 
 export class IzziStats extends Component<{}, {}> {
   render(): JSX.Element {
+    const percent = now(leavingDate, arrivingDate);
     return (
       <div style={styles.parent}>
         {/* Percentage of time since leaving until return */}
         <ProgressBar
           style={styles.progressBar}
-          label={`Amount of time since leaving ${now()}%`}
+          label={`Amount of time since leaving ${percent}%`}
           variant="success"
-          now={now()}
+          now={percent}
         />
         {/* Percentage of 50 years together that we're be away */}
         <ProgressBar
           style={styles.progressBar}
-          label={`% of time away from eachother / overall time together`}
+          label={`% of time away from each other / overall time together`}
           variant="success"
           now={calculateTimePercent(
             // TODO: Check the maths on this, I don't think it's right

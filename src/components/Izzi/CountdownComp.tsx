@@ -3,9 +3,7 @@ import Countdown from "react-countdown";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { Link } from "react-router-dom";
 import ROUTES from "../../constants/routes.json";
-
-const leavingDate = new Date(2019, 12, 18);
-const arrivingDate = new Date(2020, 10, 19);
+import { now, leavingDate, arrivingDate } from "./IzziStats";
 
 const warmerColour = "#e76f51";
 const styles = {
@@ -63,12 +61,6 @@ const renderer: ({
   }
 };
 
-const now = (): number => {
-  const total = leavingDate.getTime() + arrivingDate.getTime();
-  const now = Date.now();
-  return Number(((now / total) * 100).toFixed(3));
-};
-
 export class CountdownComp extends Component<{}, {}> {
   render(): JSX.Element {
     return (
@@ -81,7 +73,11 @@ export class CountdownComp extends Component<{}, {}> {
         <div style={{ paddingTop: "20px", color: warmerColour }}>
           {"I love you so so so so so much"}
           {/* Percentage of time since leaving until return */}
-          <ProgressBar label={`${now()}%`} variant="success" now={now()} />
+          <ProgressBar
+            label={`${now(leavingDate, arrivingDate)}%`}
+            variant="success"
+            now={now(leavingDate, arrivingDate)}
+          />
           <Link to={ROUTES.IZZI.STATS}>Stats</Link>
         </div>
       </div>
